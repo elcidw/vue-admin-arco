@@ -5,9 +5,9 @@ import { MockParams } from '@/types/mock'
 import { isLogin } from '@/utils/auth'
 
 setupMock({
+  mock: false,
   setup() {
     // Mock.XHR.prototype.withCredentials = true;
-
     // 用户信息
     Mock.mock(new RegExp('/api/user/info'), () => {
       if (isLogin()) {

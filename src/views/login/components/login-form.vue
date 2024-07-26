@@ -47,15 +47,15 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive } from 'vue'
-import { useRouter } from 'vue-router'
+import type { LoginData } from '@/api/user'
+import useLoading from '@/hooks/loading'
+import { useUserStore } from '@/store'
 import { Message } from '@arco-design/web-vue'
 import { ValidatedError } from '@arco-design/web-vue/es/form/interface'
-import { useI18n } from 'vue-i18n'
 import { useStorage } from '@vueuse/core'
-import { useUserStore } from '@/store'
-import useLoading from '@/hooks/loading'
-import type { LoginData } from '@/api/user'
+import { reactive, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const { t } = useI18n()
@@ -75,10 +75,12 @@ const userInfo = reactive({
 
 const handleSubmit = async ({ errors, values }: { errors: Record<string, ValidatedError> | undefined; values: Record<string, any> }) => {
   if (loading.value) return
+
   if (!errors) {
     setLoading(true)
     try {
       await userStore.login(values as LoginData)
+      userInfo.password = ''
       const { redirect, ...othersQuery } = router.currentRoute.value.query
       router.push({
         name: (redirect as string) || 'Workplace',
