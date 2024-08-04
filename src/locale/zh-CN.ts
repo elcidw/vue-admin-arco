@@ -26,6 +26,8 @@ import locale500 from '@/views/exception/500/locale/zh-CN'
 import localeUserInfo from '@/views/user/info/locale/zh-CN'
 import localeUserSetting from '@/views/user/setting/locale/zh-CN'
 /** simple end */
+import localeDepartment from '@/views/system/department/locale/zh-CN'
+import localeSystem from '@/views/system/muser/locale/zh-CN'
 import localeSettings from './zh-CN/settings'
 
 export default {
@@ -37,6 +39,7 @@ export default {
   'menu.result': '结果页',
   'menu.exception': '异常页',
   'menu.form': '表单页',
+  'menu.system': '系统管理',
   'menu.profile': '详情页',
   'menu.visualization': '数据可视化',
   'menu.user': '个人中心',
@@ -64,5 +67,7 @@ export default {
   ...locale500,
   ...localeUserInfo,
   ...localeUserSetting,
+  ...localeSystem,
+  ...localeDepartment,
   /** simple end */
 }

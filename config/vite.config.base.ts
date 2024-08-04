@@ -8,6 +8,7 @@ import configArcoStyleImportPlugin from './plugin/arcoStyleImport'
 export default defineConfig({
   base: './',
   plugins: [vue(), vueJsx(), svgLoader({ svgoConfig: {} }), configArcoStyleImportPlugin()],
+
   resolve: {
     alias: [
       {

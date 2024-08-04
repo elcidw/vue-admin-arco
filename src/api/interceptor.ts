@@ -20,6 +20,7 @@ axios.interceptors.request.use(
     // this example using the JWT token
     // Authorization is a custom headers key
     // please modify it according to the actual situation
+    // config.headers['Access-Control-Allow-Origin'] = '*'
     const token = getToken()
     if (token) {
       if (!config.headers) {

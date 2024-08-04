@@ -25,6 +25,9 @@ import locale500 from '@/views/exception/500/locale/en-US'
 
 import localeUserInfo from '@/views/user/info/locale/en-US'
 import localeUserSetting from '@/views/user/setting/locale/en-US'
+
+import localeDepartment from '@/views/system/department/locale/en-US'
+import localeSystem from '@/views/system/muser/locale/en-US'
 /** simple end */
 import localeSettings from './en-US/settings'
 
@@ -37,6 +40,7 @@ export default {
   'menu.result': 'Result',
   'menu.exception': 'Exception',
   'menu.form': 'Form',
+  'menu.system': 'System Management',
   'menu.profile': 'Profile',
   'menu.visualization': 'Data Visualization',
   'menu.user': 'User Center',
@@ -64,5 +68,7 @@ export default {
   ...locale500,
   ...localeUserInfo,
   ...localeUserSetting,
+  ...localeSystem,
+  ...localeDepartment,
   /** simple end */
 }
